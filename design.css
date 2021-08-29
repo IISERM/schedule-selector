@@ -198,3 +198,17 @@ footer p {
 html::-webkit-scrollbar {
     display: none;
 }
+
+#controls p{
+    margin-top: 20px;
+}
+
+#controls a{
+    color: var(--white1);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+#controls a:hover{
+    color: var(--color);
+}
