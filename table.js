@@ -196,3 +196,9 @@ let tbl;
   }
 
   /* onClick functions for the input buttons END*/
+
+  function setColor(){
+    var src = document.getElementById('color-picker');
+    var r = document.querySelector(':root');
+    r.style.setProperty('--color', src.value);
+  }

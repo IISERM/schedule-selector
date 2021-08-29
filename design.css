@@ -212,3 +212,7 @@ html::-webkit-scrollbar {
 #controls a:hover{
     color: var(--color);
 }
+
+#color-picker{
+    float: right;
+}
