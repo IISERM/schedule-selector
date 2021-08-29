@@ -201,19 +201,41 @@ let tbl;
     var src = document.getElementById('color-picker');
     var r = document.querySelector(':root');
     r.style.setProperty('--color', src.value);
+    r.style.setProperty('--bgcol', hexGradient(src.value, "#ffffff", 0.5));
   }
 
+    /* helper function for printing */
+    function hexToRgb(hex, op){
+      var c;
+      if(/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)){
+          c= hex.substring(1).split('');
+          if(c.length== 3){
+              c= [c[0], c[0], c[1], c[1], c[2], c[2]];
+          }
+          c= '0x'+c.join('');
+          return [(c>>16)&255, (c>>8)&255, c&255];
+      }
+      throw new Error('Bad Hex');
+  }
+
+  function hexGradient(color1, color2, weight) {
+    var w1 = weight;
+    var w2 = 1 - w1;
+    color1 = hexToRgb(color1);
+    color2 = hexToRgb(color2);
+    var rgb = [Math.round(color1[0] * w1 + color2[0] * w2),
+        Math.round(color1[1] * w1 + color2[1] * w2),
+        Math.round(color1[2] * w1 + color2[2] * w2)];
+    return "rgb(" + rgb.join(",") +")";
+}
   /* to print the table as an image */
   
   function printTable() {
     let table = document.getElementById("tbl");
 
-    table.style.backgroundColor = "#fdfdfd";
     var printWindow = window.open('', '', 'height=400,width=400');
     printWindow.document.write('<html><head><title>Schedule</title><link rel="stylesheet" href="design.css"><link rel="stylesheet" href="print.css">');
     printWindow.document.write('</head>');
-
-    //Print the DIV contents i.e. the HTML Table.
     printWindow.document.write('<body>');
     printWindow.document.write('<div id="container"></div>');
     printWindow.document.write('</body>');
@@ -222,7 +244,6 @@ let tbl;
     html2canvas(table, {
       onrendered: function (canvas) {
           printWindow.document.getElementById("container").appendChild(canvas);
-          table.style.backgroundColor = "transparent";
       },
       width:table.width,
       height: table.height
