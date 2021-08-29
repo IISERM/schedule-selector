@@ -21,7 +21,7 @@
 }
 
 body {
-    background: radial-gradient(var(--white1)), var(--color)) fixed;
+    background: radial-gradient(var(--white1), var(--color)) fixed;
     background-size: cover;
 }
 
