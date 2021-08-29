@@ -7,6 +7,7 @@
     --white2: #dddddd;
     --white3: #f3f3f3;
     --color: #009879;
+    --bgcol: rgb(128,204,188);
 }
 
 * {
@@ -34,6 +35,7 @@ body {
 }
 
 #tbl {
+    background-color: var(--bgcol);
     border-collapse: collapse;
     width: 100%;
     text-align: center;
@@ -77,10 +79,15 @@ tr th:first-child{
     border-bottom: 2px solid var(--color);
 }
 
-#tbl tbody tr:hover{
+/* #tbl tbody tr:nth-of-type(even):hover{
     color: var(--color);
     transition: 0.3s color ease;
 }
+
+#tbl tbody tr:nth-of-type(odd):hover{
+    color: var(--white1);
+    transition: 0.3s color ease;
+} */
 
 #title{
     padding: 10px 0;
@@ -101,14 +108,14 @@ tr th:first-child{
     color: var(--color);
 }
 
-#controls{
+.controls{
     width: 90%;
     margin: 30px auto;
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
     padding: 20px 30px;
 }
-#controls h2 {
+.controls h2 {
     font-size: 20px;
     color: var(--white1);
     margin-bottom: 20px;
@@ -132,7 +139,8 @@ tr th:first-child{
     border-radius: 15px;
     padding: 7px 15px;
     transition: all 0.3s ease;
-    margin-right: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
     cursor: pointer;
 }
 
@@ -198,20 +206,24 @@ html::-webkit-scrollbar {
     display: none;
 }
 
-#controls p{
+.controls p{
     margin-top: 20px;
 }
 
-#controls a{
+.controls a{
     color: var(--white1);
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
-#controls a:hover{
+.controls a:hover{
     color: var(--color);
 }
 
 #color-picker{
     float: right;
+}
+
+emph {
+    color: var(--white3);
 }
