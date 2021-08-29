@@ -1,0 +1,10 @@
+body{
+    background: none; 
+    height: unset;
+} 
+
+#container{
+    width: 100%; 
+    text-align: center; 
+    margin-top: 50px;
+}

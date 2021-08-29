@@ -202,3 +202,30 @@ let tbl;
     var r = document.querySelector(':root');
     r.style.setProperty('--color', src.value);
   }
+
+  /* to print the table as an image */
+  
+  function printTable() {
+    let table = document.getElementById("tbl");
+
+    table.style.backgroundColor = "#fdfdfd";
+    var printWindow = window.open('', '', 'height=400,width=400');
+    printWindow.document.write('<html><head><title>Schedule</title><link rel="stylesheet" href="design.css"><link rel="stylesheet" href="print.css">');
+    printWindow.document.write('</head>');
+
+    //Print the DIV contents i.e. the HTML Table.
+    printWindow.document.write('<body>');
+    printWindow.document.write('<div id="container"></div>');
+    printWindow.document.write('</body>');
+    printWindow.document.write('</html>');
+    
+    html2canvas(table, {
+      onrendered: function (canvas) {
+          printWindow.document.getElementById("container").appendChild(canvas);
+          table.style.backgroundColor = "transparent";
+      },
+      width:table.width,
+      height: table.height
+    });
+    printWindow.document.close();
+    }

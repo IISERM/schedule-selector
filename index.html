@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="design.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script type='text/javascript' src="table.js"> </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js" ></script>
 </head>
 <body onload='main()'>
 
@@ -13,11 +14,12 @@
     <a href="/">Schedule Selector</a>
   </div>
 
+  
   <div class="tbl-container">
     <table id='tbl'></table>
   </div>
 
-  <div id="controls"> 
+  <div class="controls"> 
     <h2>Control Panel      <input type="color" id="color-picker" name="color-picker", value="#009879", onchange="setColor();"></h2>
     <div id="course-controls">
       <label>Course code: </label>
@@ -34,9 +36,14 @@
     <br>
     <button class="code-remove" onclick="addAll();">Add All</button>
     <button class="code-remove" onclick="removeAll();">Remove All</button>
-    <!-- <button class="table-gen" onclick="generate();">Generate</button> -->
-    <p>Visit the <a href="https://github.com/20akshay00/schedule-selector">github repository</a> to open issues.
-  </p>
+    <button class="code-remove" onclick="printTable();"> Create Image</button>
+  </div>
+
+  <div class="controls">
+    <h2>Note</h2>
+    <p>If you are viewing this on a desktop browser, the <emph>Create Image</emph> button above will open a new window, where the table can be saved as an image upon right-click.
+    </p>
+    <p>Visit the <a href="https://github.com/20akshay00/schedule-selector">github repository</a> to open issues. </p>
   </div>
 
   <div id="reftable" hidden>
