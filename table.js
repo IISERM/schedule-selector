@@ -185,7 +185,9 @@ let tbl;
 
   function addAll(){
     selected_courses = [...all_courses];
-    updateCourse();
+    var courselist = document.getElementById("selected-courses");
+    courselist.innerHTML = "Selected courses: All";
+ 
     generate();
   }
 
