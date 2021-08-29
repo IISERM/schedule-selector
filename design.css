@@ -21,7 +21,7 @@
 }
 
 body {
-    background: radial-gradient(var(--white1), var(--color)) fixed;
+    background: linear-gradient( 180deg, var(--white2), var(--color)) fixed;
     background-size: cover;
 }
 
@@ -87,19 +87,18 @@ tr th:first-child{
     margin: auto;
     margin-bottom: 30px;
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.05);
 }
 
 #title a {
     font-size: 30px;
     text-decoration: none;
-    color: var(--white1);
-    transition: 0.5s color ease;
+    color: white;
+    transition: 0.3s color ease;
 }
 
 #title a:hover {
     color: var(--color);
-    transition: 0.3s color ease;
 }
 
 #controls{
