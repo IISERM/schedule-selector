@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+:root{
+    --white1: #ffffff;
+    --white2: #dddddd;
+    --white3: #f3f3f3;
+    --color: #009879;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", "Open Sans", sans-serif;
+    font-size: 16px;
+    border: thin;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+body {
+    background: radial-gradient(#bdd8d2, var(--color)) fixed;
+    background-size: cover;
+}
+
+
+.tbl-container {
+    width: 90%;
+    margin: auto;
+    border-radius: 10px 10px 0 0;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#tbl {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9em;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+}
+
+th, td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 15%;
+}
+
+tr th:first-child{
+    width: 10%;
+}
+
+#tbl thead tr{
+    background-color: var(--color);
+    color: var(--white1);
+}
+
+#tbl tbody td {
+    font-family: "Rubik";
+}
+
+#tbl tbody tr {
+    border-bottom: 1px solid var(--white2);
+    transition: 0.3s color ease;
+}
+
+#tbl tbody tr:nth-of-type(even) {
+    background-color: var(--white3);
+}
+
+#tbl tbody tr:last-of-type {
+    border-bottom: 2px solid var(--color);
+}
+
+#tbl tbody tr:hover{
+    color: var(--color);
+    transition: 0.3s color ease;
+}
+
+#title{
+    padding: 10px 0;
+    margin: auto;
+    margin-bottom: 30px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#title a {
+    font-size: 30px;
+    text-decoration: none;
+    color: var(--white1);
+    transition: 0.5s color ease;
+}
+
+#title a:hover {
+    color: var(--color);
+    transition: 0.3s color ease;
+}
+
+#controls{
+    width: 90%;
+    margin: 30px auto;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 20px 30px;
+}
+#controls h2 {
+    font-size: 20px;
+    color: var(--white1);
+    margin-bottom: 20px;
+}
+
+#course-controls{
+    margin: auto;
+}
+
+.code-picker{
+    border-radius: 10px;
+    height:30px;
+    padding: 10px;
+    width: 100px;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+
+.code-add, .code-remove, .table-gen{
+    border-radius: 15px;
+    padding: 7px 15px;
+    transition: all 0.3s ease;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.code-add:hover, .code-remove:hover, .table-gen:hover{
+    color: var(--white2);
+    background-color: var(--color);
+    transition: all 0.3s ease;
+}
+
+
+@media screen and (max-width:650px){
+    #tbl{
+        width: 650px;
+    }
+
+    .tbl-container{
+        overflow-x: scroll;
+    }
+}
+
+#selected-courses {
+    margin-top: 20px;  
+}
+
+footer button {
+    color: #fbfcfd;
+    background: transparent;
+    border: none;
+    border-radius: 100%;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+    display: inline-block;
+    margin-left: 30px;
+}
+
+
+i.fa {
+    font-size: 30px;
+
+    height: 30px;
+    width: 30px;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    color: var(--white1);
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 20px 0;
+}
+
+footer p {
+    margin: auto;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
