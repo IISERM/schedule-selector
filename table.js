@@ -69,7 +69,7 @@ let tbl;
       ref_rows.push(row_final);
     }
 
-    all_courses = [...new Set(all_courses)].filter(item => item !== "").filter(item => item !== "-");
+    all_courses = [...new Set(all_courses)].filter(item => item !== "").filter(item => item !== "-").sort();
     
     return ref_rows;
 }
