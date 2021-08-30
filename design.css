@@ -1,13 +1,105 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+/*Font Faces are imported for domtoimage to work*/
 
+/* cyrillic-ext */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/montserrat/v18/JTURjIg1_i6t8kCHKm45_ZpC3gTD_u50.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/montserrat/v18/JTURjIg1_i6t8kCHKm45_ZpC3g3D_u50.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/montserrat/v18/JTURjIg1_i6t8kCHKm45_ZpC3gbD_u50.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/montserrat/v18/JTURjIg1_i6t8kCHKm45_ZpC3gfD_u50.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/montserrat/v18/JTURjIg1_i6t8kCHKm45_ZpC3gnD_g.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+/* cyrillic-ext */
+    @font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/rubik/v14/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-B4iFWkU1Z4Y.woff2) format('woff2');
+    unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+  }
+  /* cyrillic */
+  @font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/rubik/v14/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-B4iFU0U1Z4Y.woff2) format('woff2');
+    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+  }
+  /* hebrew */
+  @font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/rubik/v14/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-B4iFVUU1Z4Y.woff2) format('woff2');
+    unicode-range: U+0590-05FF, U+20AA, U+25CC, U+FB1D-FB4F;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/rubik/v14/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-B4iFWUU1Z4Y.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/rubik/v14/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-B4iFV0U1.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  
+  
 :root{
     --white1: #ffffff;
     --white2: #dddddd;
     --white3: #f3f3f3;
-    --color: #009879;
-    --bgcol: rgb(128,204,188);
+    --color: #40A7F0;
+    --bgcol: #B3DCF9;
+    --bgcol2: #2D75A8;
 }
 
 * {
@@ -25,7 +117,7 @@ html {
 }
 
 body {
-    background: linear-gradient( 180deg, var(--white2), var(--color)) fixed;
+    background: var(--bgcol2) fixed;
     background-size: cover;
 }
 
@@ -96,13 +188,13 @@ tr th:first-child{
     margin: auto;
     margin-bottom: 30px;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 #title a {
     font-size: 30px;
     text-decoration: none;
-    color: black;
+    color: white;
     transition: 0.3s color ease;
 }
 
@@ -123,6 +215,15 @@ tr th:first-child{
     text-align: center;
     margin-left: 10px;
     margin-right: 20px;
+    font-size: 16px;
+}
+
+#print{
+    font-size: 16px;
+    border-radius: 15px;
+    padding: 7px 15px;
+    margin: auto;
+    cursor: pointer;
 }
 
 .code-btn{
@@ -131,13 +232,17 @@ tr th:first-child{
     border-radius: 15px;
     padding: 7px 15px;
     transition: all 0.3s ease;
-    margin: 20px 5px;
+    margin: 20px 5px 0px 5px;
     cursor: pointer;
+
+    background-color: transparent;
+    border: 2px solid var(--white1);
+    color: var(--white1)
 }
 
 .code-btn:hover{
-    color: var(--white1);
-    background-color: var(--color);
+    background-color: var(--bgcol2);
+    border-color: var(--bgcol2);
     transition: all 0.3s ease;
 }
 
@@ -147,8 +252,11 @@ tr th:first-child{
     align-items: center;
 }
 
+
 #selected-courses {
     margin-top: 20px;  
+    color: var(--white1);
+    font-size: 18px;
 }
 
 footer button {
@@ -225,21 +333,35 @@ html::-webkit-scrollbar {
 
 .content li {
     margin: 15px;
+    line-height: 1.3em;
 }
 
 .content emph {
     color: var(--white1);
 }
 
-#color-picker{
-    float: right;
+.content hr{
+    border-bottom: 2px solid var(--white1);
+    margin-bottom: 15px;
+}
+
+.content label{
+    color: var(--white1);
+    font-size: 18px;
 }
 
 
-@media screen and (max-width:650px){
+
+#color-picker{
+    float: right;
+    background-color: transparent;
+}
+
+
+@media screen and (max-width:720px){
     
     body {
-        background: linear-gradient( 180deg, var(--white2), var(--color)) repeat-y;
+        background: var(--bgcol2) repeat-y;
     }
 
     #tbl{
@@ -257,11 +379,28 @@ html::-webkit-scrollbar {
 
 @media screen and (max-width:450px){
     .code-btn{
-        padding: 5px 10px;
-        font-size: 14px;
+        font-size: 12px;
+        margin-right: 1px;
+        margin-left: 6px;
+        padding: 5px 6px;
+        border-radius: 10px;
+    }
+
+    .button-list{
+        display: flex;
+        justify-content: space-evenly;
     }
 
     .code-picker{
         width: 100px;
     }
+
+    .content label{
+        font-size: 16px;
+    }    
+
+    #selected-courses{
+        font-size: 16px;
+    }
+
 }

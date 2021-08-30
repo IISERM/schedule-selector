@@ -3,54 +3,56 @@
 <head>
   <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
   <title>Schedule Selector</title>
+
   <link rel="stylesheet" href="design.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
   <script type='text/javascript' src="table.js"> </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js" ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
 </head>
-<body onload='main()'>
 
+<body onload='main()'>
   <div id="title">
     <a href="#">Schedule Selector</a>
   </div>
 
-  
   <div class="tbl-container">
     <table id='tbl'></table>
   </div>
 
   <div class="content"> 
-    <h2>Control Panel <input type="color" id="color-picker" name="color-picker", value="#009879", onchange="setColor();"></h2>
+    <h2>Control Panel <input type="color" id="color-picker" name="color-picker", value="#DC951C", onchange="setColor();"></h2>
     <div id="course-controls">
       <label for="code-picker">Course code: </label>
       <input list="code-picker" name="code-picker" value="" class="code-picker">
       <datalist id="code-picker">
       </datalist>
+      <br>
       <div class="button-list">
         <button class="code-btn" onclick="addCourse();">Add</button>
         <button class="code-btn" onclick="removeCourse();">Remove</button>
+        <button class="code-btn" onclick="addAll();">Add All</button>
+        <button class="code-btn" onclick="removeAll();">Remove All</button>  
       </div>
         <!-- <button class="code-add" onclick="addCourse()">Add</button> --> 
     </div>
-
+    <br>
+    <hr>
     <div id="selected-courses">
       Selected courses: 
     </div>
     <br>
+    <hr>
     <div class="button-list">
-      <button class="code-btn" onclick="addAll();">Add All</button>
-      <button class="code-btn" onclick="removeAll();">Remove All</button>
-      <button class="code-btn" onclick="printTable();">Save Image</button>
+      <button class="code-btn" id="print" onclick="printTable();">Save Image</button>
     </div>
   </div>
 
   <div class="content">
     <h2>Note</h2>
     <ul>
-      <li>You can select course baskets by using <emph>MAJ-SUBJECT-YEAR</emph> or <emph>CORE-YEAR</emph> e.g. use MAJ-PHY-3RD, CORE-1ST, etc. Core year labs must be added manually (due to sections).</li>
-      <li><emph>Mobile users:</emph> To save the table as an image, scroll the table completely to the right (such that the time-slots are visible), and click the <emph>Save Image</emph> button. Otherwise, the image will be cropped.</li>
+      <li>You can select course baskets by using <emph>MAJ-&lt;SUBJECT&gt;-&lt;YEAR&gt;</emph> or <emph>CORE-&lt;YEAR&gt;</emph> e.g. MAJ-PHY-3RD, CORE-1ST, etc. Core year labs must be added manually (due to sections).</li>
     </ul>
   </div>
 
@@ -65,13 +67,9 @@
 
   {{ datadiv }}
 
-  <div id="export" hidden>
-    
-  </div>
-  
   <footer>
     <a href="https://github.com/20akshay00/"><button><i class="fa fa-github" aria-hidden="true"></i></button></a>
-    <p>© Akshay Shankar. Last updated:30-08-2021</p>
+    <p>© Akshay Shankar. Last updated: 31-08-2021</p>
   </footer> 
  </body>
 </html>

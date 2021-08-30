@@ -166,7 +166,7 @@ let tbl;
   
     reftable = makeRefTable();
     addDataList();
-  }
+    }
 
 
   /* onClick functions for the input buttons */
@@ -236,7 +236,8 @@ let tbl;
     var src = document.getElementById('color-picker');
     var r = document.querySelector(':root');
     r.style.setProperty('--color', src.value);
-    r.style.setProperty('--bgcol', hexGradient(src.value, "#ffffff", 0.5));
+    r.style.setProperty('--bgcol', hexGradient(src.value, "#ffffff", 0.4));
+    r.style.setProperty('--bgcol2', hexGradient(src.value, "#000000", 0.7));
   }
 
     /* helper function for printing */
@@ -267,35 +268,15 @@ let tbl;
   
   function printTable() {
     let table = document.getElementById("tbl");
-    let printWindow = window.open('', '', 'height=400,width=400');
-    var src = document.getElementById('color-picker');
+    var node = document.getElementById("tbl");
+    var options = {
+        quality: 1.0
+    };
 
-    printWindow.document.write('<html><head><title>Schedule</title><link rel="stylesheet" href="design.css"><link rel="stylesheet" href="print.css">');
-    printWindow.document.write('</head>');
-    printWindow.document.write('<body>');
-    printWindow.document.write('<div id="container"></div>');
-    printWindow.document.write('<a id="ss">Download</a>');
-    printWindow.document.write('</body>');
-    printWindow.document.write('</html>');
-    printWindow.document.close(); 
-
-    var r = printWindow.document.querySelector(':root');
-    r.style.setProperty('--color', src.value);
-    r.style.setProperty('--bgcol', hexGradient(src.value, "#ffffff", 0.5));
-
-    html2canvas(table, {
-      onrendered: function (canvas) {
-          var container = printWindow.document.getElementById("container")
-          container.appendChild(canvas);
-
-          var dataURL = canvas.toDataURL('image/png');
-          var a = printWindow.document.getElementById("ss");
-          a.href = dataURL;
-          a.download = 'schedule.png';
-
-          },
-        
-      width: table.scrollWidth + 50,
-      height: table.height
-    });
-    }
+    domtoimage.toPng(node, options).then(function(dataURL){
+        var link = document.createElement('a');
+        link.download = 'schedule.png';
+        link.href = dataURL;
+        link.click();
+    })
+}
