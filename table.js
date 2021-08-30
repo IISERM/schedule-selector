@@ -173,13 +173,17 @@ let tbl;
     var inputVal = document.getElementsByClassName("code-picker")[0].value.trim();
     if((all_courses.includes(inputVal)) && !(selected_courses.includes(inputVal))) {
       selected_courses.push(inputVal);
-    }
-    if (package_courses.includes(inputVal)) {
-      selected_courses = new Set(selected_courses.concat(all_packages[inputVal]));
-      selected_courses = Array.from(selected_courses);
-    }
+
       updateCourse();
       generate();
+    }
+    else if (package_courses.includes(inputVal)) {
+      selected_courses = new Set(selected_courses.concat(all_packages[inputVal]));
+      selected_courses = Array.from(selected_courses);
+
+      updateCourse();
+      generate();
+    }
 
     document.getElementsByClassName("code-picker")[0].value = "";
   }
@@ -188,12 +192,18 @@ let tbl;
     var inputVal = document.getElementsByClassName("code-picker")[0].value.trim();
     if(selected_courses.includes(inputVal)) {
       selected_courses = selected_courses.filter(item => item !== inputVal);
+
+       updateCourse();
+       generate();
+
     }
-    if(package_courses.includes(inputVal)) { 
-      selected_courses = selected_courses.filter(item => !(all_packages[inputVal].includes(item)))
+    else if(package_courses.includes(inputVal)) { 
+      selected_courses = selected_courses.filter(item => !(all_packages[inputVal].includes(item)));
+     
+      updateCourse();
+      generate();
+
     }
-    updateCourse();
-    generate();
 
     document.getElementsByClassName("code-picker")[0].value = "";
   }
