@@ -172,7 +172,7 @@ let tbl;
   /* onClick functions for the input buttons */
 
   function addCourse(){
-    var inputVal = document.getElementsByClassName("code-picker")[0].value.trim();
+    var inputVal = document.getElementsByClassName("code-picker")[0].value.trim().toUpperCase();
     if((all_courses.includes(inputVal)) && !(selected_courses.includes(inputVal))) {
       selected_courses.push(inputVal);
 
@@ -191,7 +191,7 @@ let tbl;
   }
 
   function removeCourse(){
-    var inputVal = document.getElementsByClassName("code-picker")[0].value.trim();
+    var inputVal = document.getElementsByClassName("code-picker")[0].value.trim().toUpperCase();
     if(selected_courses.includes(inputVal)) {
       selected_courses = selected_courses.filter(item => item !== inputVal);
 
