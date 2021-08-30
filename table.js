@@ -277,6 +277,7 @@ let tbl;
     printWindow.document.write('<a id="ss">Download</a>');
     printWindow.document.write('</body>');
     printWindow.document.write('</html>');
+    printWindow.document.close(); 
 
     var r = printWindow.document.querySelector(':root');
     r.style.setProperty('--color', src.value);
@@ -297,5 +298,4 @@ let tbl;
       width: table.scrollWidth + 50,
       height: table.height
     });
-    printWindow.document.close();
     }
