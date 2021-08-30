@@ -25,7 +25,6 @@ html {
 }
 
 body{
-    background: none; 
     height: unset;
 } 
 
@@ -93,13 +92,24 @@ html::-webkit-scrollbar {
     margin-top: 50px;
 }
 
-
 #ss{
-    width: 100%;
-    margin-top: 50px;
     font-size: 30px;
     text-align: center;
+    display: block;
+
+    text-decoration: none;
+    color: var(--white1);
+    border: 1px solid var(--color);
+    background-color: var(--color);
+    border-radius: 15px;
+
+    padding: 7px 7px;
+    transition: all 0.3s ease;
+    margin: 50px 25%;
+    cursor: pointer;
 }
 
-
-
+#ss:hover{
+    background-color: var(--white1);
+    color: var(--color);
+}

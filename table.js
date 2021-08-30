@@ -90,7 +90,7 @@ let tbl;
 /* Constructs new reference table (not html) based on selected course list*/
 
   function makeNewTable(selected_courses){
-    new_table = [];
+    var new_table = [];
 
     for(row of reftable){
       new_row = [];
@@ -267,26 +267,30 @@ let tbl;
   
   function printTable() {
     let table = document.getElementById("tbl");
+    let printWindow = window.open('', '', 'height=400,width=400');
 
-    var printWindow = window.open('', '', 'height=400,width=400');
     printWindow.document.write('<html><head><title>Schedule</title><link rel="stylesheet" href="design.css"><link rel="stylesheet" href="print.css">');
     printWindow.document.write('</head>');
     printWindow.document.write('<body>');
     printWindow.document.write('<div id="container"></div>');
+    printWindow.document.write('<a id="ss">Download</a>');
     printWindow.document.write('</body>');
     printWindow.document.write('</html>');
     
     html2canvas(table, {
       onrendered: function (canvas) {
-          printWindow.document.getElementById("container").appendChild(canvas);
-      },
+          var container = printWindow.document.getElementById("container")
+          container.appendChild(canvas);
+
+          var dataURL = canvas.toDataURL('image/png');
+          var a = printWindow.document.getElementById("ss");
+          a.href = dataURL;
+          a.download = 'schedule.png';
+
+          },
+        
       width: table.scrollWidth + 50,
       height: table.height
     });
-    if(screen.width < 650){
-      printWindow.document.write('<div id="ss"><p>Grab a screenshot!</p></div></body>');
-    }
-
     printWindow.document.close();
-
     }

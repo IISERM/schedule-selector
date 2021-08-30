@@ -42,7 +42,7 @@
     <div class="button-list">
       <button class="code-btn" onclick="addAll();">Add All</button>
       <button class="code-btn" onclick="removeAll();">Remove All</button>
-      <button class="code-btn" onclick="printTable();"> Create Image</button>
+      <button class="code-btn" onclick="printTable();">Save Image</button>
     </div>
   </div>
 
@@ -50,7 +50,7 @@
     <h2>Note</h2>
     <ul>
       <li>You can select course baskets by using <emph>MAJ-SUBJECT-YEAR</emph> or <emph>CORE-YEAR</emph> e.g. use MAJ-PHY-3RD, CORE-1ST, etc. Core year labs must be added manually (due to sections).</li>
-     <li>If you are viewing this on a desktop browser, the <emph>Create Image</emph> button above will open a new window, where the table can be saved as an image upon right-click.</li>
+     <li><emph>Mobile users:</emph> To save the table as an image, scroll the table completely to the right (such that the time-slots are visible), and click the <emph>Save Image</emph> button. Otherwise, the image will be cropped.</li>
     </ul>
   </div>
 
@@ -74,6 +74,10 @@
     BIO303|BIO612|CHM401|MTH411|MTH605|PHY201|PHY311|PHY411,BIO303|BIO612|CHM401|MTH411|MTH605|PHY201|PHY311|PHY411,BIO311|BIO612|PHY201(T)|PHY425,BIO303|BIO612|CHM401|MTH201|MTH411|MTH605|PHY657,BIO303|BIO411|BIO629|CHM411|MTH201(T)|MTH411|MTH605|PHY311|PHY411,
     BIO456|BIO616|CHM402|MTH201|MTH416|MTH424|PHY311|PHY411,BIO201|BIO456|BIO616|CHM402|MTH416|MTH424|PHY311|PHY411,BIO201|BIO311|BIO456|BIO616,BIO201(T)|BIO456|CHM402|MTH416|MTH424|PHY303|PHY425,BIO411|BIO629|MTH416|MTH424|PHY311|PHY411,IDC412
     CHM606|EES403|EES407|HSS622|HSS628|IDC409|MTH437|PHY602|PHY634|PHY657,CHM606|EES403|EES407|HSS622|HSS628|IDC409|MTH437|PHY602|PHY634|PHY657,PHY635,CHM606|EES403|EES407|HSS622|HSS628|IDC409|MTH437|PHY602,MTH437|PHY425|PHY602|PHY635,IDC412  
+  </div>
+
+  <div id="export" hidden>
+    
   </div>
   
   <footer>
