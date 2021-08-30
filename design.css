@@ -14,11 +14,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Montserrat", "Open Sans", sans-serif;
-    font-size: 16px;
     border: thin;
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
+}
+
+html {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
 }
 
 body {
@@ -39,7 +42,6 @@ body {
     border-collapse: collapse;
     width: 100%;
     text-align: center;
-    margin-top: 10px;
     font-size: 0.9em;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 
@@ -108,18 +110,6 @@ tr th:first-child{
     color: var(--color);
 }
 
-.content{
-    width: 90%;
-    margin: 30px auto;
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    padding: 20px 30px;
-}
-.content h2 {
-    font-size: 20px;
-    color: var(--white1);
-    margin-bottom: 20px;
-}
 
 #course-controls{
     margin: auto;
@@ -135,30 +125,20 @@ tr th:first-child{
     margin-right: 20px;
 }
 
-.code-add, .code-remove, .table-gen{
+.code-btn{
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
     border-radius: 15px;
     padding: 7px 15px;
     transition: all 0.3s ease;
-    margin-right: 5px;
-    margin-left: 5px;
+    margin: 5px;
     cursor: pointer;
 }
 
-.code-add:hover, .code-remove:hover, .table-gen:hover{
+.code-btn:hover{
     color: var(--white1);
     background-color: var(--color);
     transition: all 0.3s ease;
-}
-
-
-@media screen and (max-width:650px){
-    #tbl{
-        width: 650px;
-    }
-
-    .tbl-container{
-        overflow-x: scroll;
-    }
 }
 
 #selected-courses {
@@ -206,6 +186,23 @@ html::-webkit-scrollbar {
     display: none;
 }
 
+.content{
+    width: 90%;
+    margin: 30px auto;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 20px 30px;
+
+    font-family: "Rubik", sans-serif;
+    font-size: 1em;
+}
+
+.content h2 {
+    font-size: 20px;
+    color: var(--white1);
+    margin-bottom: 20px;
+}
+
 .content p{
     margin-top: 20px;
 }
@@ -221,13 +218,39 @@ html::-webkit-scrollbar {
 }
 
 .content li {
-    margin-top: 15px;
+    margin: 15px;
 }
+
+.content emph {
+    color: var(--white1);
+}
+
+
 
 #color-picker{
     float: right;
 }
 
-emph {
-    color: var(--white1);
+
+@media screen and (max-width:650px){
+    
+    body {
+        background: linear-gradient( 180deg, var(--white2), var(--color)) repeat-y;
+    }
+
+    #tbl{
+        width: 650px;
+    }
+
+    .tbl-container{
+        overflow-x: scroll;
+    }
+
+    footer {
+        font-size: 13px;
+    }
+
+    .code-btn{
+        margin-top: 20px;
+    }
 }

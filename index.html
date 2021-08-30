@@ -2,6 +2,8 @@
 <html>
 <head>
   <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <title>Course Scheduler</title>
   <link rel="stylesheet" href="design.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -20,14 +22,14 @@
   </div>
 
   <div class="content"> 
-    <h2>Control Panel      <input type="color" id="color-picker" name="color-picker", value="#009879", onchange="setColor();"></h2>
+    <h2>Control Panel <input type="color" id="color-picker" name="color-picker", value="#009879", onchange="setColor();"></h2>
     <div id="course-controls">
-      <label>Course code: </label>
+      <label for="code-picker">Course code: </label>
       <input list="code-picker" name="code-picker" value="" class="code-picker">
       <datalist id="code-picker">
       </datalist>
-      <button class="code-add" onclick="addCourse();">Add</button>
-      <button class="code-remove" onclick="removeCourse();">Remove</button>
+      <button class="code-btn" onclick="addCourse();">Add</button>
+      <button class="code-btn" onclick="removeCourse();">Remove</button>
       <!-- <button class="code-add" onclick="addCourse()">Add</button> --> 
     </div>
 
@@ -35,9 +37,9 @@
       Selected courses: 
     </div>
     <br>
-    <button class="code-remove" onclick="addAll();">Add All</button>
-    <button class="code-remove" onclick="removeAll();">Remove All</button>
-    <button class="code-remove" onclick="printTable();"> Create Image</button>
+    <button class="code-btn" onclick="addAll();">Add All</button>
+    <button class="code-btn" onclick="removeAll();">Remove All</button>
+    <button class="code-btn" onclick="printTable();"> Create Image</button>
   </div>
 
   <div class="content">
