@@ -102,7 +102,7 @@ tr th:first-child{
 #title a {
     font-size: 30px;
     text-decoration: none;
-    color: white;
+    color: black;
     transition: 0.3s color ease;
 }
 
