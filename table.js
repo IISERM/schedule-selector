@@ -268,38 +268,25 @@ let tbl;
   function printTable() {
     let table = document.getElementById("tbl");
 
+    var printWindow = window.open('', '', 'height=400,width=400');
+    printWindow.document.write('<html><head><title>Schedule</title><link rel="stylesheet" href="design.css"><link rel="stylesheet" href="print.css">');
+    printWindow.document.write('</head>');
+    printWindow.document.write('<body>');
+    printWindow.document.write('<div id="container"></div>');
+    printWindow.document.write('</body>');
+    printWindow.document.write('</html>');
+    
+    html2canvas(table, {
+      onrendered: function (canvas) {
+          printWindow.document.getElementById("container").appendChild(canvas);
+      },
+      width: table.scrollWidth + 50,
+      height: table.height
+    });
     if(screen.width < 650){
-        var src = document.getElementById('color-picker');
-        var printWindow = window.open('', '', 'height=400,width=400');
-        printWindow.document.write('<html><head><title>Schedule</title><link rel="stylesheet" href="print.css">');
-        printWindow.document.write('</head>');
-        printWindow.document.write('<body>');
-        printWindow.document.write(table.outerHTML);
-        printWindow.document.write('<div id="ss"><p>Grab a screenshot!</p></div></body>');
-        printWindow.document.write('</html>');
-        printWindow.document.close();
+      printWindow.document.write('<div id="ss"><p>Grab a screenshot!</p></div></body>');
+    }
 
-        printWindow.document.querySelector(':root').style.setProperty('--color', src.value);
-        printWindow.document.querySelector(':root').style.setProperty('--bgcol', hexGradient(src.value, "#ffffff", 0.5));
-      }
-
-    else{
-        var printWindow = window.open('', '', 'height=400,width=400');
-        printWindow.document.write('<html><head><title>Schedule</title><link rel="stylesheet" href="design.css"><link rel="stylesheet" href="print.css">');
-        printWindow.document.write('</head>');
-        printWindow.document.write('<body>');
-        printWindow.document.write('<div id="container"></div>');
-        printWindow.document.write('</body>');
-        printWindow.document.write('</html>');
-        
-        html2canvas(table, {
-          onrendered: function (canvas) {
-              printWindow.document.getElementById("container").appendChild(canvas);
-          },
-          width: table.width,
-          height: table.height
-        });
-        printWindow.document.close();
-      }
+    printWindow.document.close();
 
     }
