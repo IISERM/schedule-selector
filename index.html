@@ -19,7 +19,7 @@
     <table id='tbl'></table>
   </div>
 
-  <div class="controls"> 
+  <div class="content"> 
     <h2>Control Panel      <input type="color" id="color-picker" name="color-picker", value="#009879", onchange="setColor();"></h2>
     <div id="course-controls">
       <label>Course code: </label>
@@ -28,7 +28,6 @@
       </datalist>
       <button class="code-add" onclick="addCourse();">Add</button>
       <button class="code-remove" onclick="removeCourse();">Remove</button>
-      <p>You can select course baskets by using &lt;SUBJECT&gt;-MAJORS(&lt;YEAR&gt;) or CORE(&lt;YEAR&gt;) e.g. use PHY-MAJORS(3RD)</p>
       <!-- <button class="code-add" onclick="addCourse()">Add</button> --> 
     </div>
 
@@ -41,10 +40,19 @@
     <button class="code-remove" onclick="printTable();"> Create Image</button>
   </div>
 
-  <div class="controls">
+  <div class="content">
     <h2>Note</h2>
-    <p>If you are viewing this on a desktop browser, the <emph>Create Image</emph> button above will open a new window, where the table can be saved as an image upon right-click.
-    </p>
+    <ul>
+      <li>You can select course baskets by using <emph>MAJ-SUBJECT-YEAR</emph> or <emph>CORE-YEAR</emph> e.g. use MAJ-PHY-3RD, CORE-1ST, etc. Core year labs must be added manually (due to sections).</li>
+     <li>If you are viewing this on a desktop browser, the <emph>Create Image</emph> button above will open a new window, where the table can be saved as an image upon right-click.</li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <h2>Contributors</h2>
+    <ul>
+      <li><a href="https://github.com/aabhasgulati/">Aabhas Gulati</a>, MS18; implemented the QoL update of selecting course baskets in one click.</li>
+    </ul>
     <p>Visit the <a href="https://github.com/20akshay00/schedule-selector">github repository</a> to open issues. </p>
   </div>
 

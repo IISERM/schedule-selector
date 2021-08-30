@@ -108,14 +108,14 @@ tr th:first-child{
     color: var(--color);
 }
 
-.controls{
+.content{
     width: 90%;
     margin: 30px auto;
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
     padding: 20px 30px;
 }
-.controls h2 {
+.content h2 {
     font-size: 20px;
     color: var(--white1);
     margin-bottom: 20px;
@@ -145,7 +145,7 @@ tr th:first-child{
 }
 
 .code-add:hover, .code-remove:hover, .table-gen:hover{
-    color: var(--white2);
+    color: var(--white1);
     background-color: var(--color);
     transition: all 0.3s ease;
 }
@@ -206,18 +206,22 @@ html::-webkit-scrollbar {
     display: none;
 }
 
-.controls p{
+.content p{
     margin-top: 20px;
 }
 
-.controls a{
+.content a{
     color: var(--white1);
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
-.controls a:hover{
+.content a:hover{
     color: var(--color);
+}
+
+.content li {
+    margin-top: 15px;
 }
 
 #color-picker{
@@ -225,5 +229,5 @@ html::-webkit-scrollbar {
 }
 
 emph {
-    color: var(--white3);
+    color: var(--white1);
 }

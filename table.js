@@ -1,16 +1,18 @@
 let reftable;
 let selected_courses = [];
 let all_courses = [];
-let all_packages = {'PHY-MAJORS(4TH)':['PHY401','PHY402','PHY403','PHY411'], 
-                    'PHY-MAJORS(3RD)':['PHY301','PHY302','PHY310','PHY311','PHY303'],
-                    'CORE(2ND)':['PHY201','BIO201','CHM201','MTH201','PHY201(T)','BIO201(T)','CHM201(T)','MTH201(T)'],
-                    'BIO-MAJORS(4TH)':['BIO401','BIO402','BIO411'],
-                    'BIO-MAJORS(3RD)':['BIO301','BIO302','BIO303','BIO311'],
-                    'MTH-MAJORS(3RD)':['MTH301','MTH302','MTH303','MTH304'],
-                    'MTH-MAJORS(4TH)':['MTH402','MTH403'],
-                    'CHM-MAJORS(3RD)':['CHM301','CHM302','CHM303','CHM311'], 
-                    'CHM-MAJORS(4TH)':['CHM401','CHM411','CH402'],
-                    'CORE(1ST)':['PHY101','CHM101','BIO101','MTH101','PHY101(T)','CHM101(T)','BIO101(T)','MTH101(T)']}
+
+/* ODD SEM */
+let all_packages = {'MAJ-PHY-4TH':['PHY401','PHY402','PHY403','PHY411'], 
+                    'MAJ-PHY-3RD':['PHY301','PHY302','PHY310','PHY311','PHY303'],
+                    'MAJ-BIO-4TH':['BIO401','BIO402','BIO411'],
+                    'MAJ-BIO-3RD':['BIO301','BIO302','BIO303','BIO311'],
+                    'MAJ-MTH-4TH':['MTH402','MTH403'],
+                    'MAJ-MTH-3RD':['MTH301','MTH302','MTH303','MTH304'],
+                    'MAJ-CHM-4TH':['CHM401','CHM411','CH402'],
+                    'MAJ-CHM-3RD':['CHM301','CHM302','CHM303','CHM311'], 
+                    'CORE-2ND':['PHY201','BIO201','CHM201','MTH201','PHY201(T)','BIO201(T)','CHM201(T)','MTH201(T)'],
+                    'CORE-1ST':['PHY101','CHM101','BIO101','MTH101','PHY101(T)','CHM101(T)','BIO101(T)','MTH101(T)']}
 let package_courses = Object.keys(all_packages);
 let tbl;
 
