@@ -256,13 +256,12 @@ html::-webkit-scrollbar {
 }
 
 @media screen and (max-width:450px){
-    .button-list {
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
+    .code-btn{
+        padding: 5px 10px;
+        font-size: 14px;
     }
 
-    .code-btn{
-        margin: 5px 5px;
+    .code-picker{
+        width: 100px;
     }
 }
