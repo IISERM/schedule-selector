@@ -268,6 +268,7 @@ let tbl;
   function printTable() {
     let table = document.getElementById("tbl");
     let printWindow = window.open('', '', 'height=400,width=400');
+    var src = document.getElementById('color-picker');
 
     printWindow.document.write('<html><head><title>Schedule</title><link rel="stylesheet" href="design.css"><link rel="stylesheet" href="print.css">');
     printWindow.document.write('</head>');
@@ -276,7 +277,11 @@ let tbl;
     printWindow.document.write('<a id="ss">Download</a>');
     printWindow.document.write('</body>');
     printWindow.document.write('</html>');
-    
+
+    var r = printWindow.document.querySelector(':root');
+    r.style.setProperty('--color', src.value);
+    r.style.setProperty('--bgcol', hexGradient(src.value, "#ffffff", 0.5));
+
     html2canvas(table, {
       onrendered: function (canvas) {
           var container = printWindow.document.getElementById("container")
