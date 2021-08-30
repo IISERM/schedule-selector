@@ -131,7 +131,7 @@ tr th:first-child{
     border-radius: 15px;
     padding: 7px 15px;
     transition: all 0.3s ease;
-    margin: 5px;
+    margin: 20px 5px;
     cursor: pointer;
 }
 
@@ -139,6 +139,12 @@ tr th:first-child{
     color: var(--white1);
     background-color: var(--color);
     transition: all 0.3s ease;
+}
+
+.button-list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 #selected-courses {
@@ -225,8 +231,6 @@ html::-webkit-scrollbar {
     color: var(--white1);
 }
 
-
-
 #color-picker{
     float: right;
 }
@@ -249,8 +253,16 @@ html::-webkit-scrollbar {
     footer {
         font-size: 13px;
     }
+}
+
+@media screen and (max-width:450px){
+    .button-list {
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
 
     .code-btn{
-        margin-top: 20px;
+        margin: 5px 5px;
     }
 }
