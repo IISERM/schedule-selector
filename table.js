@@ -1,7 +1,19 @@
 let reftable;
 let selected_courses = [];
 let all_courses = [];
+let all_packages = {'PHY-MAJORS(4TH)':['PHY401','PHY402','PHY403','PHY411'], 
+                    'PHY-MAJORS(3RD)':['PHY301','PHY302','PHY310','PHY311','PHY303'],
+                    'CORE(2ND)':['PHY201','BIO201','CHM201','MTH201','PHY201(T)','BIO201(T)','CHM201(T)','MTH201(T)'],
+                    'BIO-MAJORS(4TH)':['BIO401','BIO402','BIO411'],
+                    'BIO-MAJORS(3RD)':['BIO301','BIO302','BIO303','BIO311'],
+                    'MTH-MAJORS(3RD)':['MTH301','MTH302','MTH303','MTH304'],
+                    'MTH-MAJORS(4TH)':['MTH402','MTH403'],
+                    'CHM-MAJORS(3RD)':['CHM301','CHM302','CHM303','CHM311'], 
+                    'CHM-MAJORS(4TH)':['CHM401','CHM411','CH402'],
+                    'CORE(1ST)':['PHY101','CHM101','BIO101','MTH101','PHY101(T)','CHM101(T)','BIO101(T)','MTH101(T)']}
+let package_courses = Object.keys(all_packages);
 let tbl;
+
 
 /* HTML Table Construction helper functions*/
   function addCell(tr, val) {
@@ -70,7 +82,6 @@ let tbl;
     }
 
     all_courses = [...new Set(all_courses)].filter(item => item !== "").filter(item => item !== "-").sort();
-    
     return ref_rows;
 }
 
@@ -121,6 +132,9 @@ let tbl;
     for(option of all_courses){
       options += '<option value="' + option + '" />';
     }
+    for(option of package_courses){
+      options += '<option value="' + option + '" />';
+    }
     document.getElementById("code-picker").innerHTML = options;
   }
 
@@ -159,6 +173,14 @@ let tbl;
     var inputVal = document.getElementsByClassName("code-picker")[0].value.trim();
     if((all_courses.includes(inputVal)) && !(selected_courses.includes(inputVal))) {
       selected_courses.push(inputVal);
+
+      updateCourse();
+      generate();
+    }
+    else if (package_courses.includes(inputVal)) {
+      selected_courses = new Set(selected_courses.concat(all_packages[inputVal]));
+      selected_courses = Array.from(selected_courses);
+
       updateCourse();
       generate();
     }
@@ -170,8 +192,17 @@ let tbl;
     var inputVal = document.getElementsByClassName("code-picker")[0].value.trim();
     if(selected_courses.includes(inputVal)) {
       selected_courses = selected_courses.filter(item => item !== inputVal);
+
+       updateCourse();
+       generate();
+
+    }
+    else if(package_courses.includes(inputVal)) { 
+      selected_courses = selected_courses.filter(item => !(all_packages[inputVal].includes(item)));
+     
       updateCourse();
       generate();
+
     }
 
     document.getElementsByClassName("code-picker")[0].value = "";
