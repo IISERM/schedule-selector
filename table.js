@@ -9,7 +9,7 @@ let all_packages = {'MAJ-PHY-4TH':['PHY401','PHY402','PHY403','PHY411'],
                     'MAJ-BIO-3RD':['BIO301','BIO302','BIO303','BIO311'],
                     'MAJ-MTH-4TH':['MTH402','MTH403'],
                     'MAJ-MTH-3RD':['MTH301','MTH302','MTH303','MTH304'],
-                    'MAJ-CHM-4TH':['CHM401','CHM411','CH402'],
+                    'MAJ-CHM-4TH':['CHM401','CHM402','CHM411'],
                     'MAJ-CHM-3RD':['CHM301','CHM302','CHM303','CHM311'], 
                     'CORE-2ND':['PHY201','BIO201','CHM201','MTH201','PHY201(T)','BIO201(T)','CHM201(T)','MTH201(T)'],
                     'CORE-1ST':['PHY101','CHM101','BIO101','MTH101','PHY101(T)','CHM101(T)','BIO101(T)','MTH101(T)']}
