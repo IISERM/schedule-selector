@@ -11,18 +11,19 @@
   <script type='text/javascript' src="table.js"> </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
 </head>
-
 <body onload='main()'>
+
   <div id="title">
     <a href="#">Schedule Selector</a>
   </div>
 
+  
   <div class="tbl-container">
     <table id='tbl'></table>
   </div>
 
   <div class="content"> 
-    <h2>Control Panel <input type="color" id="color-picker" name="color-picker", value="#DC951C", onchange="setColor();"></h2>
+    <h2>Control Panel <input type="color" id="color-picker" name="color-picker", value="#40A7F0", onchange="setColor();"></h2>
     <div id="course-controls">
       <label for="code-picker">Course code: </label>
       <input list="code-picker" name="code-picker" value="" class="code-picker">
@@ -44,10 +45,14 @@
     </div>
     <br>
     <hr>
-    <div class="button-list">
-      <button class="code-btn" id="print" onclick="printTable();">Save Image</button>
+    <p id="export-label">Export table as: </p>
+    <div id="export-list">
+      <ul>
+        <li><button class="export-btn" id="png-export" onclick="exportAsPng();">PNG</button></li><li><button class="export-btn" id="csv-export" onclick="exportAsCSV();">CSV</button></li>
+      </ul>
     </div>
   </div>
+
 
   <div class="content">
     <h2>Note</h2>

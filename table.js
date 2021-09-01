@@ -266,8 +266,7 @@ let tbl;
 }
   /* to print the table as an image */
   
-  function printTable() {
-    let table = document.getElementById("tbl");
+  function exportAsPng() {
     var node = document.getElementById("tbl");
     var options = {
         quality: 1.0
@@ -277,6 +276,30 @@ let tbl;
         var link = document.createElement('a');
         link.download = 'schedule.png';
         link.href = dataURL;
+        document.body.appendChild(link);
         link.click();
+        document.body.removeChild(link);
     })
 }
+
+  function exportAsCSV() {
+    let data = "";
+    const tableData = [];
+    const rows = document.querySelectorAll("#tbl tr");
+
+    for (const row of rows) {
+      const rowData = [];
+      for (const [index, column] of row.querySelectorAll("th, td").entries()) {
+        rowData.push(column.innerText.replace(/\n/g, "|"));
+      }
+      tableData.push(rowData.join(","));
+    }
+    data += tableData.join("\n");
+
+    var link = document.createElement("a");
+    link.href = URL.createObjectURL(new Blob([data], { type: "text/csv" }));
+    link.setAttribute("download", "schedule.csv");
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }

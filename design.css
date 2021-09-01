@@ -218,15 +218,7 @@ tr th:first-child{
     font-size: 16px;
 }
 
-#print{
-    font-size: 16px;
-    border-radius: 15px;
-    padding: 7px 15px;
-    margin: auto;
-    cursor: pointer;
-}
-
-.code-btn{
+.code-btn, .export-btn{
     font-family: "Montserrat", sans-serif;
     font-size: 16px;
     border-radius: 15px;
@@ -240,7 +232,7 @@ tr th:first-child{
     color: var(--white1)
 }
 
-.code-btn:hover{
+.code-btn:hover, .export-btn:hover{
     background-color: var(--bgcol2);
     border-color: var(--bgcol2);
     transition: all 0.3s ease;
@@ -350,11 +342,44 @@ html::-webkit-scrollbar {
     font-size: 18px;
 }
 
-
-
 #color-picker{
     float: right;
     background-color: transparent;
+}
+
+#export-label{
+    color: var(--white1);
+    font-size: 18px;
+}
+
+#export-list{
+    display: flex;
+}
+
+#export-list ul{
+    margin: auto;    
+}
+
+#export-list li{
+    display: inline;
+    margin: 0px;
+}
+
+#png-export{
+    margin-right: 0px;
+    border-right: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+#csv-export{
+    margin-left: 0px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+#csv-export:hover{
+    border-left-color: var(--white1);
 }
 
 
@@ -378,12 +403,17 @@ html::-webkit-scrollbar {
 }
 
 @media screen and (max-width:450px){
+
     .code-btn{
         font-size: 12px;
         margin-right: 1px;
         margin-left: 6px;
         padding: 5px 6px;
         border-radius: 10px;
+    }
+
+    .export-btn{
+        font-size: 12px;
     }
 
     .button-list{
@@ -400,6 +430,10 @@ html::-webkit-scrollbar {
     }    
 
     #selected-courses{
+        font-size: 16px;
+    }
+
+    #export-label{
         font-size: 16px;
     }
 

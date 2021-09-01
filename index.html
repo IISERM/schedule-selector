@@ -3,10 +3,11 @@
 <head>
   <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
   <title>Schedule Selector</title>
+
   <link rel="stylesheet" href="design.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
   <script type='text/javascript' src="table.js"> </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
 </head>
@@ -44,8 +45,11 @@
     </div>
     <br>
     <hr>
-    <div class="button-list">
-      <button class="code-btn" id="print" onclick="printTable();">Save Image</button>
+    <p id="export-label">Export table as: </p>
+    <div id="export-list">
+      <ul>
+        <li><button class="export-btn" id="png-export" onclick="exportAsPng();">PNG</button></li><li><button class="export-btn" id="csv-export" onclick="exportAsCSV();">CSV</button></li>
+      </ul>
     </div>
   </div>
 
