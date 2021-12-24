@@ -17,11 +17,11 @@ let all_courses = [];
 /* EVEN SEM */
 let all_packages = {'MAJ-PHY-4TH':['PHY412'], 
                     'MAJ-PHY-3RD':['PHY304','PHY306','PHY312'],
-                    'MAJ-BIO-4TH':['BIO403','BIO403','BIO412'],
+                    'MAJ-BIO-4TH':['BIO403','BIO404','BIO412'],
                     'MAJ-BIO-3RD':['BIO304','BIO305','BIO306','BIO312'],
                     'MAJ-MTH-4TH':[],
                     'MAJ-MTH-3RD':['MTH305','MTH307','MTH308','MTH309'],
-                    'MAJ-CHM-4TH':['CHM403','CHM403','CHM412'],
+                    'MAJ-CHM-4TH':['CHM403','CHM404','CHM412'],
                     'MAJ-CHM-3RD':['CHM304','CHM305','CHM306','CHM312'], 
                     'CORE-2ND':['PHY202','BIO202','CHM202','MTH202','PHY202(T)','BIO202(T)','CHM202(T)','MTH202(T)'],
                     'CORE-1ST':['PHY102','CHM102','BIO102','MTH102','PHY102(T)','CHM102(T)','BIO102(T)','MTH102(T)']}
