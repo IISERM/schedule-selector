@@ -3,28 +3,28 @@ let selected_courses = [];
 let all_courses = [];
 
 /* ODD SEM */
-// let all_packages = {'MAJ-PHY-4TH':['PHY401','PHY402','PHY403','PHY411'], 
-//                     'MAJ-PHY-3RD':['PHY301','PHY302','PHY310','PHY311','PHY303'],
-//                     'MAJ-BIO-4TH':['BIO401','BIO402','BIO411'],
-//                     'MAJ-BIO-3RD':['BIO301','BIO302','BIO303','BIO311'],
-//                     'MAJ-MTH-4TH':['MTH402','MTH403'],
-//                     'MAJ-MTH-3RD':['MTH301','MTH302','MTH303','MTH304'],
-//                     'MAJ-CHM-4TH':['CHM401','CHM402','CHM411'],
-//                     'MAJ-CHM-3RD':['CHM301','CHM302','CHM303','CHM311'], 
-//                     'CORE-2ND':['PHY201','BIO201','CHM201','MTH201','PHY201(T)','BIO201(T)','CHM201(T)','MTH201(T)'],
-//                     'CORE-1ST':['PHY101','CHM101','BIO101','MTH101','PHY101(T)','CHM101(T)','BIO101(T)','MTH101(T)']}
+let all_packages = {'MAJ-PHY-4TH':['PHY401','PHY402','PHY403','PHY411'], 
+                    'MAJ-PHY-3RD':['PHY301','PHY302','PHY310','PHY311','PHY303'],
+                    'MAJ-BIO-4TH':['BIO401','BIO402','BIO411'],
+                    'MAJ-BIO-3RD':['BIO301','BIO302','BIO303','BIO311'],
+                    'MAJ-MTH-4TH':['MTH402','MTH403'],
+                    'MAJ-MTH-3RD':['MTH301','MTH302','MTH303','MTH304'],
+                    'MAJ-CHM-4TH':['CHM401','CHM402','CHM411'],
+                    'MAJ-CHM-3RD':['CHM301','CHM302','CHM303','CHM311'], 
+                    'CORE-2ND':['PHY201','BIO201','CHM201','MTH201','PHY201(T)','BIO201(T)','CHM201(T)','MTH201(T)'],
+                    'CORE-1ST':['PHY101','CHM101','BIO101','MTH101','PHY101(T)','CHM101(T)','BIO101(T)','MTH101(T)']}
 
 /* EVEN SEM */
-let all_packages = {'MAJ-PHY-4TH':['PHY412'], 
-                     'MAJ-PHY-3RD':['PHY304','PHY306','PHY312'],
-                     'MAJ-BIO-4TH':['BIO403','BIO404','BIO412'],
-                     'MAJ-BIO-3RD':['BIO304','BIO305','BIO306','BIO312'],
-                     'MAJ-MTH-4TH':[],
-                     'MAJ-MTH-3RD':['MTH305','MTH307','MTH308','MTH309'],
-                     'MAJ-CHM-4TH':['CHM403','CHM404','CHM412'],
-                     'MAJ-CHM-3RD':['CHM304','CHM305','CHM306','CHM312'], 
-                     'CORE-2ND':['PHY202','BIO202','CHM202','MTH202','PHY202(T)','BIO202(T)','CHM202(T)','MTH202(T)'],
-                     'CORE-1ST':['PHY102','CHM102','BIO102','MTH102','PHY102(T)','CHM102(T)','BIO102(T)','MTH102(T)']}
+// let all_packages = {'MAJ-PHY-4TH':['PHY412'], 
+//                      'MAJ-PHY-3RD':['PHY304','PHY306','PHY312'],
+//                      'MAJ-BIO-4TH':['BIO403','BIO404','BIO412'],
+//                      'MAJ-BIO-3RD':['BIO304','BIO305','BIO306','BIO312'],
+//                      'MAJ-MTH-4TH':[],
+//                      'MAJ-MTH-3RD':['MTH305','MTH307','MTH308','MTH309'],
+//                      'MAJ-CHM-4TH':['CHM403','CHM404','CHM412'],
+//                      'MAJ-CHM-3RD':['CHM304','CHM305','CHM306','CHM312'], 
+//                      'CORE-2ND':['PHY202','BIO202','CHM202','MTH202','PHY202(T)','BIO202(T)','CHM202(T)','MTH202(T)'],
+//                      'CORE-1ST':['PHY102','CHM102','BIO102','MTH102','PHY102(T)','CHM102(T)','BIO102(T)','MTH102(T)']}
 
 let package_courses = Object.keys(all_packages);
 let tbl;
