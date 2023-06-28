@@ -47,7 +47,4 @@ for df in dfs:
     for entry in table_entries:
         table.append(entry)
 
-table = table[0:len(table)-1]
-
 print('\n'.join(table))
-
