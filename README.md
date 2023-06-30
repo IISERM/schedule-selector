@@ -49,4 +49,4 @@ Make sure that the `{{ datadiv }}` line is unaltered somewhere within the body d
 - [x] Color picker to change the base website color.
 - [x] Export options
 - [x] Automate pre-processing of the table
-- [] Automate last updated date
+- [ ] Automate last updated date
