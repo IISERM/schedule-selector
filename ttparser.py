@@ -7,28 +7,30 @@ import numpy as np
 
 pdf_file= 'tt.pdf'
 
-dfs = tb.read_pdf(pdf_file, stream=True, pages='all', pandas_options={'header': None}, columns=[100.0, 183.6, 262.80, 337.68, 417.60, 495.36, 557.28, 625.68], guess=False)
-dfs[0] = dfs[0].iloc[3:]
+dfs = tb.read_pdf(pdf_file, stream=True, pages='all', pandas_options={'header': None}, columns=[106.56, 175.68, 266.40, 348.48, 431.28, 511.92, 594.72, 666, 735.0], guess=False)
+dfs[0] = dfs[0].iloc[4:]
 
 # creating the table 
 table = []
 week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
 for i in range(len(dfs)):
+    dfs[i] = dfs[i].iloc[:, 1:]
     if i%2 != 0:
-        dfs[i][7] = np.nan
-    else:
-        dfs[i] = dfs[i].iloc[:, :8] 
+        dfs[i][8] = np.nan
+#     else:
+#         dfs[i] = dfs[i].iloc[:, :8] 
 
-dfs[7] = dfs[7].iloc[:, :8]
+# dfs[7] = dfs[7].iloc[:, :8]
 
 cols = dfs[0].values.tolist()[0]
 
 for df in dfs: 
     df.columns = cols
 
-for df in dfs:
-    start_idxs = df.index[df["Venue"] == 'LH1'].tolist()
+
+for i in range(len(dfs)):
+    start_idxs = dfs[i].index[dfs[i]["Venue"] == 'LH1'].tolist()
 
     # there are at max 2 timeslots on a single page of the pdf in the current format
     timeslot_tts = [[], []] 
@@ -38,14 +40,14 @@ for df in dfs:
 
     elif len(start_idxs) == 1:
         for day in week:
-            tmp = df.loc[start_idxs[0]:]
+            tmp = dfs[i].loc[start_idxs[0]:]
             tmp = tmp[tmp[day].notnull()][day].tolist()
             timeslot_tts[0].append("|".join(tmp))
 
     else:
         for day in week:
-            tmp = df.loc[start_idxs[0]:start_idxs[-1]-1]
-            tmp1 = df.loc[start_idxs[-1]:]
+            tmp = dfs[i].loc[start_idxs[0]:start_idxs[-1]-1]
+            tmp1 = pd.concat([dfs[i].loc[start_idxs[-1]:], dfs[i+1]])
             tmp = tmp[tmp[day].notnull()][day].tolist()
             tmp1 = tmp1[tmp1[day].notnull()][day].tolist()
             timeslot_tts[0].append("|".join(tmp))
